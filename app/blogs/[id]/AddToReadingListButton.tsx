@@ -18,6 +18,7 @@ export default function AddToReadingListButton({
   return (
     <button
       onClick={handleClick}
+      data-testid="add-to-reading-list-button"
       className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
     >
       add to reading list
