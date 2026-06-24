@@ -31,7 +31,10 @@ export default function RegisterPage() {
             className="w-full border rounded px-3 py-2"
           />
           {state.errors.username && (
-            <p className="text-red-600 text-sm mt-1">
+            <p
+              data-testid="username-error"
+              className="text-red-600 text-sm mt-1"
+            >
               {state.errors.username}
             </p>
           )}
@@ -48,7 +51,9 @@ export default function RegisterPage() {
             className="w-full border rounded px-3 py-2"
           />
           {state.errors.name && (
-            <p className="text-red-600 text-sm mt-1">{state.errors.name}</p>
+            <p data-testid="name-error" className="text-red-600 text-sm mt-1">
+              {state.errors.name}
+            </p>
           )}
         </div>
         <div>
@@ -62,14 +67,17 @@ export default function RegisterPage() {
             className="w-full border rounded px-3 py-2"
           />
           {state.errors.password && (
-            <p className="text-red-600 text-sm mt-1">
+            <p
+              data-testid="password-error"
+              className="text-red-600 text-sm mt-1"
+            >
               {state.errors.password}
             </p>
           )}
         </div>
         <div>
           <label htmlFor="passwordConfirm" className="block mb-1 font-medium">
-            Confirm password
+            Confirm Password
           </label>
           <input
             id="passwordConfirm"
@@ -78,13 +86,17 @@ export default function RegisterPage() {
             className="w-full border rounded px-3 py-2"
           />
           {state.errors.passwordConfirm && (
-            <p className="text-red-600 text-sm mt-1">
+            <p
+              data-testid="passwordConfirm-error"
+              className="text-red-600 text-sm mt-1"
+            >
               {state.errors.passwordConfirm}
             </p>
           )}
         </div>
         <button
           type="submit"
+          data-testid="register-button"
           className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded"
         >
           Register
