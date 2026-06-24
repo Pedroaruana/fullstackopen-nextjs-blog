@@ -21,6 +21,7 @@ export const blogs = pgTable("blogs", {
   title: text("title").notNull(),
   author: text("author").notNull(),
   url: text("url").notNull(),
+  likes: integer("likes").notNull().default(0),
   userId: integer("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
