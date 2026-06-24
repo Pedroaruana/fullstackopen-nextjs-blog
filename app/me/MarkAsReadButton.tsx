@@ -18,6 +18,7 @@ export default function MarkAsReadButton({
   return (
     <button
       onClick={handleClick}
+      data-testid={`mark-read-${readingListId}`}
       className="bg-green-600 hover:bg-green-500 text-white px-3 py-1 rounded text-sm"
     >
       mark as read

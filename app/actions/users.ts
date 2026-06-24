@@ -65,14 +65,15 @@ export const registerUser = async (
   redirect("/login")
 }
 
-export const generateToken = async () => {
+export const generateToken = async (token?: string) => {
   const user = await getCurrentUser()
   if (!user) {
     redirect("/login")
   }
 
-  const token = crypto.randomUUID()
-  await db.update(users).set({ token }).where(eq(users.id, user.id))
+  const newToken = token ?? crypto.randomUUID()
+  await db.update(users).set({ token: newToken }).where(eq(users.id, user.id))
 
   revalidatePath("/me")
+  return newToken
 }
